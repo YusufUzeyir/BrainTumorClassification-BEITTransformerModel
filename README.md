@@ -1,7 +1,11 @@
 # Beyin Tümörü Sınıflandırma Projesi (BEiT Transformer Modeli)
 
-Bu proje, beyin MR (Manyetik Rezonans) görüntülerindeki tümörleri sınıflandırmak için bir BEiT (Bidirectional Encoder representation from Image Transformers) modeli kullanır. Proje, bir Python/Flask backend'i ve bir React frontend'inden oluşmaktadır.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1z_354OOG0RqUhohEnw75rfraYY97bE9T)
+![Model](https://img.shields.io/badge/Model-BEiT%20Transformer-red?style=flat-square&logo=google-scholar&logoColor=white)
+![Deep Learning](https://img.shields.io/badge/Domain-Medical%20Imaging-success?style=flat-square)
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat-square&logo=PyTorch&logoColor=white)
 
+Bu proje, beyin MR (Manyetik Rezonans) görüntülerindeki tümörleri sınıflandırmak için bir BEiT (Bidirectional Encoder representation from Image Transformers) modeli kullanır. Proje, bir Python/Flask backend'i ve bir React frontend'inden oluşmaktadır.
 
 ### Özellikler
 
@@ -15,8 +19,8 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
 1.  **Depoyu Klonlayın:**
     ```bash
-    git clone https://github.com/YusufUzeyir/BrainTumorClassfiction-BEITTransformerModel.git
-    cd BrainTumorClassfiction-BEITTransformerModel
+    git clone [https://github.com/YusufUzeyir/BrainTumorClassification-BEITTransformerModel.git](https://github.com/YusufUzeyir/BrainTumorClassification-BEITTransformerModel.git)
+    cd BrainTumorClassification-BEITTransformerModel
     ```
 2.  **Backend Kurulumu:**
     * `backend` klasörüne gidin: `cd backend`
@@ -52,8 +56,6 @@ Model eğitimi için `backend/ModelTrain.ipynb` Jupyter Notebook dosyasını kul
 
 ### Model Eğitimi Sonuçları
 
-Model, `ModelTrain.ipynb` dosyasında detaylandırılan eğitim süreciyle belirli sayıda epoch boyunca eğitilmiştir. Eğitim süresince ve doğrulama veri seti üzerinde elde edilen temel metrikler aşağıda tablo halinde sunulmuştur. Bu metrikler, modelin öğrenme performansını ve genelleme yeteneğini göstermektedir.
-
 | Epoch | Eğitim Kaybı (Train Loss) | Eğitim Doğruluğu (Train Accuracy) | Doğrulama Kaybı (Validation Loss) | Doğrulama Doğruluğu (Validation Accuracy) | F1 Skoru (F1-Score) |
 | :---- | :------------------------- | :-------------------------------- | :-------------------------------- | :---------------------------------------- | :------------------ |
 | 1     | ~0.5                       | ~80%                              | ~0.4                              | ~85%                                      | ~0.84               |
@@ -62,30 +64,10 @@ Model, `ModelTrain.ipynb` dosyasında detaylandırılan eğitim süreciyle belir
 | 4     | ~0.15                      | ~96%                              | ~0.15                             | ~96.5%                                    | ~0.96               |
 | 5     | ~0.1                       | ~97%                              | ~0.13                             | ~97%                                      | ~0.97               |
 
-*Not: Yukarıdaki değerler, `ModelTrain.ipynb` dosyasındaki eğitim çıktılarından elde edilen örnek/yaklaşık değerlerdir. Gerçek eğitim sonuçları, kullanılan veri setine, hiperparametrelere ve eğitim süresince gerçekleşen rastgeleliğe bağlı olarak biraz farklılık gösterebilir.*
-
-Tabloda görüldüğü gibi, epoch'lar ilerledikçe eğitim ve doğrulama kaybı azalmakta, doğruluk ve F1 skoru ise artmaktadır. F1 skoru, sınıflandırma problemlerinde Precision (Kesinlik) ve Recall (Geri Çağırma) değerlerinin harmonik ortalamasıdır ve modelin performansı hakkında dengeli bir görüş sunar, özellikle sınıflar arası dengesizlik olduğunda kullanışlıdır.
-
 ### Ekran Görüntüleri
 
-Aşağıda uygulamanın farklı aşamalarından ekran görüntüleri bulunmaktadır:
-
 #### Ana Sayfa ve Görüntü Yükleme Alanı
-
-Uygulamanın başlangıç arayüzü ve kullanıcıların MR görüntülerini yükleyebileceği bölüm.
-
 ![image](https://github.com/user-attachments/assets/f4d76dfc-5b12-4d7b-8cc1-c5d32054195a)
 
 #### Analiz Sonuçları ve Tümör Bilgisi
-
-Yüklenen görüntünün analiz edilmesi sonucunda elde edilen tümör sınıflandırması, güven skoru, olasılık dağılımları ve tümör hakkında detaylı bilgi.
-
 ![Ekran görüntüsü 2025-05-16 124908](https://github.com/user-attachments/assets/0227e363-59e3-4029-9c87-598643f5ae7b)
-
-#### Backend Terminal Çıktısı (Görüntü Doğrulama ve Sınıflandırma)
-
-Backend'in Gemini API ile görüntüyü doğrulama ve model ile sınıflandırma adımlarındaki terminal çıktıları.
-
-![Ekran görüntüsü 2025-05-16 124946](https://github.com/user-attachments/assets/2c10bdf6-ec28-4d3a-9460-85410f7946b9)
-
-
